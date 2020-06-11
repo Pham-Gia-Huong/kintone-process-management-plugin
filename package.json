@@ -1,0 +1,40 @@
+{
+  "name": "kintone-process-management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/plugin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf build && webpack --config webpack.config.js --env.production='true' --mode production",
+    "build:plugin": "npm run build && kintone-plugin-packer --out build/plugin.zip ./build/",
+    "tsc": "tsc",
+    "dev":"webpack --config webpack.config.js --env.production='false' --mode development",
+    "build:dev":"kintone-plugin-packer --out build/plugin.zip  --watch ./build/",
+		"lint": "eslint \"src/plugin/**\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pham-Gia-Huong/kintone-process-management-plugin"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pham-Gia-Huong/kintone-process-management-plugin/issues"
+  },
+  "homepage": "https://github.com/Pham-Gia-Huong/kintone-process-management-plugin#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@cybozu/eslint-config": "^10.0.3",
+    "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "core-js": "^3.0.1",
+    "css-loader": "^3.5.1",
+    "eslint": "^6.8.0",
+    "style-loader": "^1.1.3",
+    "ts-loader": "^7.0.5",
+    "webpack": "^4.43.0"
+  },
+  "dependencies": {}
+}
